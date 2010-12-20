@@ -1,0 +1,215 @@
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+a {
+  color: #5d5d5d;
+  text-decoration: none; }
+  a:hover {
+    color: white !important; }
+
+div.pagination a:hover {
+  color: black !important; }
+
+div#top_left_border {
+  position: absolute;
+  left: 0;
+  background-image: url("/images/LeftUpBAH.jpg");
+  width: 26px;
+  height: 123px;
+  z-index: 2; }
+
+div#header {
+  color: white;
+  position: absolute;
+  left: 0;
+  background-image: url("/images/UpBAH.jpg");
+  width: 100%;
+  height: 123px;
+  z-index: 1; }
+
+div#top_right_border {
+  position: absolute;
+  right: 0;
+  background-image: url("/images/RightUpBAH.jpg");
+  width: 26px;
+  height: 123px;
+  z-index: 2; }
+
+div#left_border {
+  position: absolute;
+  left: 0;
+  background-image: url("/images/LeftBAH.jpg");
+  width: 26px;
+  height: 100%;
+  background-repeat: repeat-y;
+  z-index: 1; }
+
+div#right_border {
+  position: absolute;
+  right: 0;
+  background-image: url("/images/RightBAH.jpg");
+  width: 26px;
+  height: 100%;
+  background-repeat: repeat-y;
+  z-index: 1; }
+
+div#content {
+  position: absolute;
+  top: 135px;
+  left: 39px;
+  right: 244px;
+  bottom: 30px;
+  z-index: 3; }
+  div#content div.tbl table {
+    border-collapse: collapse;
+    border-bottom: 2px solid #2e2e2e;
+    border-spacing: 0; }
+    div#content div.tbl table tr {
+      border-left: 2px solid #2e2e2e;
+      border-right: 2px solid #2e2e2e; }
+    div#content div.tbl table tr.header {
+      background-image: url("/images/UpContent.jpg");
+      height: 50px;
+      background-repeat: repeat-x; }
+      div#content div.tbl table tr.header th {
+        border: 1px solid #5d5d5d;
+        color: white !important;
+        font-weight: normal;
+        padding: 0 5px; }
+    div#content div.tbl table td {
+      border: 1px solid #e0e0e0;
+      text-align: left;
+      padding: 0 5px;
+      line-height: 25px; }
+    div#content div.tbl table td.number {
+      text-align: right; }
+    div#content div.tbl table td.center {
+      text-align: center; }
+
+div#sidebar {
+  color: white;
+  position: absolute;
+  top: 123px;
+  right: 0;
+  z-index: 3; }
+  div#sidebar .element {
+    background-image: url("/images/MediumSidebar.jpg");
+    width: 223px;
+    height: 43px; }
+    div#sidebar .element span {
+      display: block;
+      padding: 10px 0 0 20px; }
+
+div#top_sidebar {
+  background-image: url("/images/UpSidebar.jpg");
+  width: 223px;
+  height: 18px; }
+
+div#bottom_sidebar {
+  background-image: url("/images/DownSidebar.jpg");
+  width: 223px;
+  height: 18px; }
+
+.simple_form {
+  float: left; }
+  .simple_form label, .simple_form .nested_fields_label {
+    float: left;
+    width: 130px;
+    text-align: right;
+    margin-right: 10px; }
+  .simple_form .nested_fields_label {
+    font-weight: bold; }
+  .simple_form div.input {
+    margin-bottom: 10px;
+    min-height: 30px; }
+    .simple_form div.input input, .simple_form div.input textarea {
+      border: 1px solid #e0e0e0; }
+    .simple_form div.input select, .simple_form div.input input {
+      min-width: 230px; }
+    .simple_form div.input input[type='checkbox'] {
+      min-width: 1px; }
+  .simple_form div.boolean, .simple_form input[type='submit'] {
+    margin-left: 140px; }
+  .simple_form div.boolean label {
+    float: none;
+    margin: 0; }
+  .simple_form .check_boxes div {
+    float: right;
+    margin-right: 5px; }
+    .simple_form .check_boxes div label {
+      width: 100px; }
+  .simple_form div.nested_fields_actions {
+    height: 30px; }
+  .simple_form .field_with_errors {
+    background: none;
+    color: red; }
+
+div.actions {
+  float: left;
+  clear: left; }
+
+fieldset.new_client {
+  margin-left: 140px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0; }
+
+.info div {
+  whitespace: nowrap;
+  clear: both; }
+  .info div span.label {
+    float: left;
+    clear: right;
+    width: 160px; }
+    .info div span.label:after {
+      content: ": "; }
+
+div.login_bar {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  z-index: 3; }
+
+.action {
+  text-indent: -9999px;
+  min-width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap; }
+  .action:hover {
+    background: none;
+    color: black !important; }
+  .action.disabled {
+    opacity: 0.3; }
+  .action.with_text {
+    text-indent: 0 !important;
+    text-decoration: none;
+    padding-left: 20px;
+    vertical-align: top; }
+  .action.add {
+    background: url("/images/icons/add.png") no-repeat; }
+  .action.back {
+    background: url("/images/icons/back.png") no-repeat; }
+  .action.edit {
+    background: url("/images/icons/edit.png") no-repeat; }
+  .action.delete {
+    background: url("/images/icons/delete.png") no-repeat; }
+  .action.show {
+    background: url("/images/icons/info.png") no-repeat; }
+
+span.flag {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle; }
+  span.flag.true {
+    background: url("/images/icons/true.png"); }
+  span.flag.false {
+    background: url("/images/icons/false.png"); }
+
+div.info {
+  margin-bottom: 10px; }

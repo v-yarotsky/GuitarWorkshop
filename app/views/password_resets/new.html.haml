@@ -1,0 +1,6 @@
+%h1= t "reset_password.title_reset"
+= notice
+%div
+  = simple_form_for password_resets_path do |f|
+    = f.input :email
+    = f.button :submit

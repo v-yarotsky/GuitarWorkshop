@@ -1,0 +1,218 @@
+$icons_path: unquote('/images/icons/')
+
+body
+  background-color: #FFF
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+
+a
+  color: #5D5D5D
+  text-decoration: none
+  &:hover
+    color: #FFF !important
+
+div.pagination a:hover
+  color: #000 !important
+
+div#top_left_border
+  position: absolute
+  left: 0
+  background-image: url('/images/LeftUpBAH.jpg')
+  width: 26px
+  height: 123px
+  z-index: 2
+
+div#header
+  color: #FFF
+  position: absolute
+  left: 0
+  background-image: url('/images/UpBAH.jpg')
+  width: 100%
+  height: 123px
+  z-index: 1
+
+div#top_right_border
+  position: absolute
+  right: 0
+  background-image: url('/images/RightUpBAH.jpg')
+  width: 26px
+  height: 123px
+  z-index: 2
+
+div#left_border
+  position: absolute
+  left: 0
+  background-image: url('/images/LeftBAH.jpg')
+  width: 26px
+  height: 100%
+  background-repeat: repeat-y
+  z-index: 1
+
+div#right_border
+  position: absolute
+  right: 0
+  background-image: url('/images/RightBAH.jpg')
+  width: 26px
+  height: 100%
+  background-repeat: repeat-y
+  z-index: 1
+
+div#content
+  position: absolute
+  top: 135px
+  left: 39px
+  right: 244px
+  bottom: 30px
+  z-index: 3
+  div.tbl table
+    border-collapse: collapse
+    border-bottom: 2px solid #2e2e2e
+    border-spacing: 0
+    tr
+      border-left: 2px solid #2e2e2e
+      border-right: 2px solid #2e2e2e
+    tr.header
+      background-image: url('/images/UpContent.jpg')
+      height: 50px
+      background-repeat: repeat-x
+      th
+        border: 1px solid #5D5D5D
+        color: #FFF !important
+        font-weight: normal
+        padding: 0 5px
+    td
+      border: 1px solid #E0E0E0
+      text-align: left
+      padding: 0 5px
+      line-height: 25px
+    td.number
+      text-align: right
+    td.center
+      text-align: center
+
+div#sidebar
+  color: #FFF
+  position: absolute
+  top: 123px
+  right: 0
+  z-index: 3
+  .element
+    background-image: url('/images/MediumSidebar.jpg')
+    width: 223px
+    height: 43px
+    span
+      display: block
+      padding: 10px 0 0 20px
+
+div#top_sidebar
+  background-image: url('/images/UpSidebar.jpg')
+  width: 223px
+  height: 18px
+
+div#bottom_sidebar
+  background-image: url('/images/DownSidebar.jpg')
+  width: 223px
+  height: 18px
+
+.simple_form
+  float: left
+  label, .nested_fields_label
+    float: left
+    width: 130px
+    text-align: right
+    margin-right: 10px
+  .nested_fields_label
+    font-weight: bold
+  div.input
+    margin-bottom: 10px
+    min-height: 30px
+    input, textarea
+      border: 1px solid #E0E0E0
+    select, input
+      min-width: 230px
+    input[type='checkbox']
+      min-width: 1px
+  div.boolean, input[type='submit']
+    margin-left: 140px
+  div.boolean label
+    float: none
+    margin: 0
+  .check_boxes div
+    float: right
+    margin-right: 5px
+    label
+      width: 100px
+  div.fields
+  div.nested_fields_actions
+    height: 30px
+  .field_with_errors
+    background: none
+    color: red
+
+div.actions
+  float: left
+  clear: left
+
+fieldset.new_client
+  margin-left: 140px
+  margin-bottom: 10px
+  border: 1px solid #E0E0E0
+
+.info div
+  whitespace: nowrap
+  clear: both
+  span.label
+    float: left
+    clear: right
+    width: 160px
+    &:after
+      content: ": "
+
+div.login_bar
+  position: absolute
+  right: 40px
+  top: 20px
+  z-index: 3
+
+.action
+  text-indent: -9999px
+  min-width: 16px
+  height: 16px
+  display: inline-block
+  vertical-align: middle
+  white-space: nowrap
+  &:hover
+    background: none
+    color: #000 !important
+  &.disabled
+    opacity: 0.3
+  &.with_text
+    text-indent: 0 !important
+    text-decoration: none
+    padding-left: 20px
+    vertical-align: top
+  &.add
+    background: url("#{$icons_path}add.png") no-repeat
+  &.back
+    background: url("#{$icons_path}back.png") no-repeat
+  &.edit
+    background: url("#{$icons_path}edit.png") no-repeat
+  &.delete
+    background: url("#{$icons_path}delete.png") no-repeat
+  &.show
+    background: url("#{$icons_path}info.png") no-repeat
+
+span.flag
+  width: 16px
+  height: 16px
+  display: inline-block
+  vertical-align: middle
+  &.true
+    background: url("#{$icons_path}true.png")
+  &.false
+    background: url("#{$icons_path}false.png")
+
+div.info
+  margin-bottom: 10px

@@ -1,0 +1,8 @@
+%h1= t "session.login"
+= notice
+%div
+  = simple_form_for @user_session do |f|
+    = f.input :login
+    = f.input :password
+    = f.input :remember_me, :as => :boolean
+    = f.button :submit

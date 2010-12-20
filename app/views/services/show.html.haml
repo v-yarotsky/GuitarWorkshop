@@ -1,0 +1,28 @@
+%div.info.service_info
+  %div
+    %span.label= t("activerecord.attributes.service.name")
+    = @service.name
+  %div
+    %span.label= t("activerecord.attributes.service.price")
+    = format_price(@service.price)
+  %div
+    %span.label= t "orders.orderline.parts_price"
+    = format_price @service.parts_total
+  %div
+    %span.label= t("activerecord.attributes.service.description")
+    = @service.description
+%b= t "parts.parts"
+%div.service_parts.tbl
+  %table
+    %tr.header
+      %th= t "activerecord.attributes.part.name"
+      %th= t "activerecord.attributes.part.manufacturer"
+      %th= t "activerecord.attributes.part.price"
+      - @service.parts.each do |part|
+        %tr
+          %td= part.name
+          %td.number= part.manufacturer.name
+          %td.number= format_price part.price
+%div.actions
+  = item_actions @service
+= link_back_to :services

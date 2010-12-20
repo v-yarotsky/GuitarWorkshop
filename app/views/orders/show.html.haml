@@ -1,0 +1,32 @@
+%h1= t "orders.show"
+%div.info.order_info
+  %div
+    %span.label= t "orders.client"
+    = @order.client.name
+  %div
+    %span.label= t "activerecord.attributes.client.phone"
+    = @order.client.phone
+  %div
+    %span.label= t "activerecord.attributes.client.email"
+    = link_to_email @order.client.email
+  %div
+    %span.label= t "common.description"
+    = @order.description
+  %div
+    %span.label= t "orders.complete_at"
+    = format_date @order.completed_at
+  %div
+    %span.label= t "orders.status"
+    = order_status @order
+  %div
+    %span.label= t "common.price"
+    = format_price @order.total
+  %div
+    %span.label= t "orders.paid"
+    = format_flag @order.paid
+  %div
+    %span.label= t "orders.code"
+    = @order.code
+= render "orderlines", :order => @order
+= item_actions @order
+= link_back_to :orders

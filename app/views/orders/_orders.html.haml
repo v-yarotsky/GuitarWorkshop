@@ -1,0 +1,36 @@
+%div.content
+  %div.tbl
+    %table
+      %tr.header
+        %th= t "orders.order_no"
+        %th= t "orders.client"
+        %th= t "orders.status"
+        %th= t "orders.accepted_at"
+        %th= t "orders.complete_at"
+        %th= t "common.price"
+        %th= t "orders.paid"
+        %th
+      - @orders.each do |order|
+        %tr
+          %td.number
+            = order.id
+          %td
+            = order.client.name
+          %td
+            = order_status(order)
+          %td.center
+            = format_date(order.created_at)
+          %td.center
+            = format_date(order.completed_at)
+          %td.number
+            = format_price order.total
+          %td.center
+            = format_flag order.paid
+          %td.actions
+            = item_actions order
+  = will_paginate @orders
+
+:javascript
+  $(document).ready(function() {
+    $('.pagination a').attr('data-remote', 'true');
+  });

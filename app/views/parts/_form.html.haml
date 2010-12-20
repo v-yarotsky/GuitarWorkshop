@@ -1,0 +1,10 @@
+= errors_for @part
+= simple_form_for @part do |f|
+  = f.input :name
+  = f.association :part_category, :include_blank => false
+  = f.input :new_part_category_name
+  = f.association :manufacturer, :include_blank => false
+  = f.input :new_manufacturer_name
+  = f.input :price
+  = f.input :description, :as => :text, :input_html => { :rows => 5 }
+  = f.button :submit

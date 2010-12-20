@@ -1,0 +1,276 @@
+ru:
+  authlogic:
+    error_messages:
+      password_blank: "не может быть пустым"
+      login_not_found: "не соответствует ни одному пользователю"
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            client_id:
+              blank: "должен быть выбран (или добавлен)"
+            manager_id:
+              blank: "должен быть выбран"
+            orderlines:
+              invalid: "Есть ошибки в заполнении списка услуг"
+              blank: "Должна быть хотя бы одна услуга"
+            client:
+              invalid: "не выбран"
+        orderline:
+          attributes:
+            service_id:
+              blank: "должна быть выбрана"
+            order_id:
+              blank: "должен быть выбран"
+            count:
+              blank: "должно быть заполнено"
+              invalid: "должно быть числом, большим чем 0"
+        part:
+          attributes:
+            name:
+              blank: "должно быть заполнено"
+            price:
+              blank: "должна быть заполнена"
+              negative: "должна быть больше нуля"
+            manufacturer_id:
+              blank: "должен быть выбран"
+            part_category_id:
+              blank: "должна быть выбрана"
+        service:
+          attributes:
+            name:
+              blank: "должно быть заполнено"
+            price:
+              blank: "должна быть заполнена"
+              negative: "должна быть больше нуля"
+        client:
+          attributes:
+            name:
+              blank: "должно быть заполнено"
+            phone:
+              blank: "должен быть заполнен"
+            email:
+              blank: "должен быть заполнен"
+    models:
+      order: "Заказ"
+      orderline: "Пункт заказа"
+      service: "Услуга"
+      part: "Запчасть"
+      user: "Пользователь"
+      client: "Клиент"
+      manufacturer: "Производитель"
+      part_category: "Категория"
+      role: "Роль"
+    attributes:
+      part:
+        id: "Код запчасти"
+        name: "Наименование"
+        description: "Описание"
+        price: "Стоимость"
+        part_category: "Категория"
+        manufacturer: "Производитель"
+      service:
+        id: "Код услуги"
+        name: "Наименование"
+        description: "Описание"
+        price: "Стоимость"
+      part_category:
+        name: "Название"
+        description: "Описание"
+      manufacturer:
+        name: "Производитель"
+        description: "Описание"
+      user:
+        name: "ФИО"
+        login: "Логин"
+        email: "E-mail"
+        phone: "Телефон"
+        roles: "Роли"
+        password: "Пароль"
+        password_confirmation: "Повторите пароль"
+        role: "Роль"
+      client:
+        name: "ФИО"
+        address: "Адрес"
+        email: "E-mail"
+        phone: "Телефон"
+      orderline:
+        service: "Услуга"
+        count: "Количество"
+        done: "Выполнено"
+      order:
+        client: "Клиент"
+        orderlines: ""
+
+  helpers:
+    submit:
+      user_session:
+        create: "Войти"
+      order:
+        create: "Создать заказ"
+        update: "Обновить заказ"
+      part:
+        create: "Добавить запчасть"
+        update: "Обновить запчасть"
+      service:
+        create: "Добавить услугу"
+        update: "Обновить услугу"
+      user:
+        create: "Зарегистрировать"
+        update: "Обновить"
+      code:
+        submit: "Просмотреть информацию"
+
+  simple_form:
+      "yes": 'Да'
+      "no": 'Нет'
+      required:
+        text: 'Обязательное'
+        mark: '*'
+      error_notification:
+        default_message: "Есть ошибки:"
+      labels:
+        order:
+          client: "Клиент"
+          manager: "Менеджер"
+          paid: "Оплачен"
+          description: "Описание"
+        user_session:
+          new:
+            login: "Логин"
+            password: "Пароль"
+            remember_me: "Запомнить"
+        part:
+          new_part_category_name: "Название новой категории"
+          new_manufacturer_name: "Название нового производителя"
+      errors:
+        user_session:
+          new:
+            password: "не может быть пустым"
+            login: "не соответствует ни одному пользователю"
+
+  reset_password:
+    title_reset: "Сброс пароля"
+    title_edit: "Изменить пароль"
+    submit_reset: "Сбросить пароль!"
+    submit_edit: "Изменить пароль!"
+    email_prompt_reset: "Введите свой e-mail в поле ниже и нажмите \"Сбросить пароль!\""
+    new_password_prompt_edit: "Введите свой e-mail в поле ниже и нажмите \"Изменить пароль!\""
+
+    reset_instruction_title: "Инструкции по сбросу пароля"
+    reset_instruction: "Был сделан запрос на сброс вашего пароля. Для ввода нового пароля, пожалуйста, проследуйте по следующей ссылке:"
+
+    account_not_found: "Такой учетной записи не существует!"
+    reset_instructions_sent: "Инстукции по сбросу пароля были отправлены на указанный e-mail"
+    password_updated: "Ваш пароль был успешно изменен"
+
+  mail:
+    registration_info_title: "Регистрационные данные"
+    registration_info: "<p>Ваши учетные данные:</p><p>Логин: %{login}</p><p>Пароль: %{password}</p>"
+    order_completed_title: "Ваш заказ (#%{number}) готов!"
+    order_completed: "<p>Заказ номер #%{number} выполнен</p>"
+    order_accepted_title: "Заказ номер #%{number} принят"
+    order_accepted: "<p>Ваш заказ принят</p><p>Вы можете узнать текущее состояние заказа на сайте, используя следующий секретный код: </p><p>%{code}</p>"
+
+  common:
+    accept: "Применить"
+    save: "Сохранить"
+    cancel: "Отменить"
+    ok: "Подтвердить"
+    edit: "Редактировать"
+    show: "Показать"
+    add: "Добавить"
+    delete: "Удалить"
+    are_you_sure: "Вы уверены?"
+    total: "Итого"
+    price: "Стоимость"
+    description: "Описание"
+    go_back: "Назад"
+    ready: "Готово"
+    error: "Ошибка!"
+    previous: "← Предыдущая"
+    next: "Следующая →"
+
+  orders:
+    orders: "Заказы"
+    new: "Новый заказ"
+    show: "Информация о заказе"
+    edit: "Редактирование информации о заказе"
+    order_no: "Номер заказа"
+    client: "Клиент"
+    manager: "Менеджер"
+    manager_email: "E-mail менеджера"
+    manager_phone: "Телефон менеджера"
+    status: "Статус"
+    accepted_at: "Принят"
+    complete_at: "Выполнен"
+    paid: "Оплачен"
+    add_orderline: "Добавить пункт"
+    not_found: "Заказ не найден"
+    code: "Секретный код"
+    orderlines: "Услуги"
+    statuses:
+      pending: "В очереди"
+      in_progress: "Выполняется"
+      done: "Готов"
+    orderline:
+      status: "Готово"
+      service_price: "Стоимость услуг"
+      parts_price: "Стоимость запчастей"
+
+  services:
+    services: "Услуги"
+    new: "Новая услуга"
+    edit: "Редактирование информации об услуге"
+    id: "Код услуги"
+    name: "Наименование"
+    long_name: "Наименование услуги"
+    quantity: "Количество"
+    show: "Информация об услуге"
+
+  parts:
+    parts: "Запчасти"
+    new: "Новая запчасть"
+    edit: "Редактирование информации о запчасти"
+    show: "Информация о запчасти"
+
+  users:
+    new: "Регистрация нового пользователя"
+    edit: "Редактирование информации о пользователе"
+    show: "Информация о пользователе"
+    registration_successful: "Регистрация прошла успешно"
+    update_successful: "Обновление информации прощло успешно"
+
+  clients:
+    new: "Новый клиент"
+
+  authorization:
+    must_be_logged_in: "Вы должны быть авторизованы для доступа к этой странице"
+    must_be_logged_out: "Вы должны выйти для доступа к этой странице"
+    access_denied: "Вы не имеете доступа к этой странице"
+
+  session:
+    login_successful: "Добро пожаловать"
+    logout_successful: "До свидания"
+    login: "Вход"
+    login_label: "Логин"
+    password_label: "Пароль"
+    login_submit: "Войти!"
+    remember_me: "Запомнить"
+
+  login_bar:
+    login: "Войти"
+    logout: "Выйти"
+    forgot_password: "Забыл пароль"
+    logged_in_as: "Здравствуйте, %{username}"
+
+  navigation:
+    home: "Главная"
+    parts: "Каталог запчастей"
+    services: "Каталог услуг"
+    administration: "Администрация"
+    orders: "Заказы"
+
+
+

@@ -1,0 +1,10 @@
+=simple_form_for(@service) do |f|
+  = errors_for @service
+  %div.inputs
+    = f.input :name
+    = f.input :price
+    = f.input :description, :as => :text, :input_html => { :rows => 5 }
+    -#= render "parts", :f => f
+    = f.association :parts
+  %div.actions
+    = f.button :submit

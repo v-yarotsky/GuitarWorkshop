@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %title= "GuitarWorkshop"
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    %div#top_left_border
+    %div#top_right_border
+    %div#top_border
+      %div#header
+    %div
+      %div#left_border
+      %div.login_bar
+        = render "/common/login_bar"
+      %div#right_border
+    %div#sidebar
+      %div#top_sidebar
+      = navigation
+      %div#bottom_sidebar
+    %div#content
+      = yield
+

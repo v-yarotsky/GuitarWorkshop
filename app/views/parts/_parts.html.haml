@@ -1,0 +1,30 @@
+%div.content
+  %div.tbl
+    %table
+      %tr.header
+        %th= t("activerecord.attributes.part.id")
+        %th= t("activerecord.attributes.part.name")
+        %th= t("activerecord.models.part_category")
+        %th= t("activerecord.models.manufacturer")
+        %th= t("activerecord.attributes.part.price")
+        %th
+      - @parts.each do |part|
+        %tr
+          %td.number
+            = part.id
+          %td
+            = part.name
+          %td
+            = part.part_category.name
+          %td
+            = part.manufacturer.name
+          %td.number
+            = format_price(part.price)
+          %td.actions
+            = item_actions part
+  = will_paginate @parts
+
+:javascript
+  $(document).ready(function() {
+    $('.pagination a').attr('data-remote', 'true');
+  });

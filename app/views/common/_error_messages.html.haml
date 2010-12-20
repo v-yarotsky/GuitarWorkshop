@@ -1,0 +1,6 @@
+%div#error_explanation
+  %h2= t "common.error"
+  %ul
+  - object.errors.full_messages.each do |msg|
+    %li
+      = msg

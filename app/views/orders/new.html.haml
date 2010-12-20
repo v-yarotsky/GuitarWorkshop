@@ -1,0 +1,24 @@
+%h1= t "orders.new"
+%div.content
+  = errors_for @order
+  = simple_form_for @order do |f|
+    = f.association :client
+    = f.association :manager, :as => :hidden
+    %fieldset.new_client
+      %legend= t "clients.new"
+      = f.simple_fields_for :client, @client do |fo|
+        = fo.input :name
+        = fo.input :phone
+        = fo.input :email
+        = fo.input :address
+    = f.input :description, :as => :text, :input_html => { :rows => 5 }
+    = f.input :paid, :as => :boolean
+    %div.nested_fields_for_orderlines
+      %div.nested_fields_actions
+        %span.nested_fields_label= t "orders.orderlines"
+        %span{ :style => "float: right" }= link_to_add_fields :orderlines, f
+      = f.simple_fields_for :orderlines do |fo|
+        = render "orderline_fields", :f => fo
+    = f.button :submit
+  %div.actions
+    = link_back_to :orders

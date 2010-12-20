@@ -1,0 +1,19 @@
+%h1= t "parts.show"
+%div.info.part_info
+  %div
+    %span.label= t "activerecord.attributes.part.name"
+    = @part.name
+  %div
+    %span.label= t "activerecord.attributes.part.part_category"
+    = @part.part_category.name
+  %div
+    %span.label= t "activerecord.attributes.part.manufacturer"
+    = @part.manufacturer.name
+  %div
+    %span.label= t "activerecord.attributes.part.price"
+    = format_price @part.price
+  %div
+    %span.label= t "activerecord.attributes.part.description"
+    = @part.description
+= link_back_to :parts
+

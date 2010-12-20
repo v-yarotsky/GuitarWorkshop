@@ -1,0 +1,22 @@
+%div.tbl
+  %table
+    %tr.header
+      %th= t "services.long_name"
+      %th= t "services.quantity"
+      %th= t "orders.orderline.service_price"
+      %th= t "orders.orderline.parts_price"
+      %th= t "common.price"
+      %th= t "orders.orderline.status"
+    - order.orderlines.each do |orderline|
+      %tr
+        %td= orderline.service.name
+        %td.number= orderline.count
+        %td.number= format_price orderline.service_total
+        %td.number= format_price orderline.service.parts_total
+        %td.number= format_price orderline.total
+        %td.center= format_flag orderline.done
+    %tr
+      %td{ :colspan => 4 }
+        = t "common.total"
+      %td.number{ :colspan => 2}
+        = format_price order.total

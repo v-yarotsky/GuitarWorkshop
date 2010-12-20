@@ -1,0 +1,6 @@
+- unless current_user
+  = link_to t("login_bar.login"), login_path
+  = link_to t("login_bar.forgot_password"), new_password_reset_path
+- else
+  = link_to t("login_bar.logged_in_as", :username => current_user.name)
+  = link_to t("login_bar.logout"), logout_path

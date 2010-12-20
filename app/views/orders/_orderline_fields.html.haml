@@ -1,0 +1,7 @@
+%div.fields
+  %div.inputs{ :style => "display: inline-block; float: left;"}
+    = f.association :service, :include_blank => false
+    = f.input :count
+    = f.input :done, :value => "false"
+  %div{ :style => "float: right; display: inline-block;"}
+    = link_to_remove_fields f

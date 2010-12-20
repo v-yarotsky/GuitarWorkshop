@@ -1,0 +1,50 @@
+%div.info.order_info
+  %div
+    %span.label= t "orders.manager"
+    = @order.manager.name
+  -if @order.manager.phone
+    %div
+      %span.label= t "orders.manager_phone"
+      = @order.manager.phone
+  %div
+    %span.label= t "orders.manager_email"
+    = link_to @order.manager.email, "mailto:@order.manager.email"
+  %div
+    %span.label= t "common.description"
+    = @order.description
+  %div
+    %span.label= t "orders.status"
+    = order_status(@order)
+  %div
+    %span.label= t "orders.complete_at"
+    = format_date(@order.completed_at) || format_flag(false)
+  %div
+    %span.label= t "common.price"
+    = order_total(@order)
+  %div
+    %span.label= t "orders.paid"
+    = format_flag @order.paid
+%div.orderlines.tbl
+  %table
+    %tr.header
+      %th= t "services.long_name"
+      %th= t "services.quantity"
+      %th= t "orders.orderline.service_price"
+      %th= t "orders.orderline.parts_price"
+      %th= t "common.price"
+      %th= t("orders.orderline.status")
+    - @order.orderlines.each do |orderline|
+      %tr
+        %td= orderline.service.name
+        %td.number= orderline.count
+        %td.number= format_price orderline.service_total
+        %td.number= format_price orderline.parts_total
+        %td.number= format_price orderline.total
+        %td.center= format_flag orderline.done
+    %tr
+      %td{ :colspan => 2 }
+        = t "common.total"
+      %td{ :colspan => 2, :class => "number" }
+        = order_total(@order)
+= order_actions(@order)
+= link_to_history_back

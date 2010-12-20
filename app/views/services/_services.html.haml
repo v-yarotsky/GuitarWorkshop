@@ -1,0 +1,24 @@
+%div.content
+  %div.tbl
+    %table
+      %tr.header
+        %th= t "services.id"
+        %th= t "services.name"
+        %th= t "common.price"
+        %th
+      - @services.each do |service|
+        %tr
+          %td.number
+            = service.id
+          %td
+            = service.name
+          %td.number
+            = format_price(service.price)
+          %td.actions
+            = item_actions service
+  = will_paginate @services
+
+:javascript
+  $(document).ready(function() {
+    $('.pagination a').attr('data-remote', 'true');
+  });

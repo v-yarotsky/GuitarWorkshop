@@ -1,0 +1,3 @@
+= link_to_show order
+= link_to_edit order
+= link_to_remove order, :unless => (order.paid? or order.in_progress?)
