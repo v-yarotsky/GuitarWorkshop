@@ -1,6 +1,6 @@
-class ServicesController < ApplicationController
+class UsersController < ApplicationController
 
-  require_user
+  before_filter :require_user
   require_role "Admin"
   respond_to :html
 
@@ -16,8 +16,8 @@ class ServicesController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save!
-      redirect_to admin_path
+    if @user.save
+      redirect_to admin_path and return
     end
     respond_with @user
   end
@@ -29,7 +29,11 @@ class ServicesController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
+    if @user.update_attributes(params[:user])
+      Rails.logger.debug("OKOKOKOKOKOKOKOKOK")
+      redirect_to admin_path and return
+    end
+    Rails.logger.debug("FFFFUUUUUUU")
     respond_with @user
   end
 

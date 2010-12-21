@@ -17,10 +17,7 @@
     = order_status(@order)
   %div
     %span.label= t "orders.complete_at"
-    = format_date(@order.completed_at) || format_flag(false)
-  %div
-    %span.label= t "common.price"
-    = order_total(@order)
+    = format_date(@order.completed_at)
   %div
     %span.label= t "orders.paid"
     = format_flag @order.paid
@@ -42,9 +39,9 @@
         %td.number= format_price orderline.total
         %td.center= format_flag orderline.done
     %tr
-      %td{ :colspan => 2 }
+      %td{ :colspan => 4 }
         = t "common.total"
       %td{ :colspan => 2, :class => "number" }
-        = order_total(@order)
-= order_actions(@order)
+        = format_price @order.total
+= item_actions @order
 = link_to_history_back

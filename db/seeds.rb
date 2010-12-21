@@ -7,12 +7,12 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-[ { :name => "Admin", :controller => "admin"}, { :name => "Manager", :controller => "orders"} ].each do |role|
+[ { :name => "Admin", :controller => "admins"}, { :name => "Manager", :controller => "orders"} ].each do |role|
   Role.create(role)
 end
 
 [
-  { :name => "Admin", :login => "Admin", :password => "admin", :password_confirmation => "admin", :email => "admin@admins.com", :phone => "+3751111111", :role => Role.find_by_name("Admin") },
+  { :name => "Admin", :login => "Admin", :password => "admins", :password_confirmation => "admins", :email => "admins@admins.com", :phone => "+3751111111", :role => Role.find_by_name("Admin") },
   { :name => "Chuck", :login => "chuck", :password => "chuck", :password_confirmation => "chuck", :email => "chuck@huitarworkshop.com", :phone => "+3752222222", :role => Role.find_by_name("Manager") }
 ].each do |user|
   User.create(user)

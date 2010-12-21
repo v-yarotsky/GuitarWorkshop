@@ -1,0 +1,13 @@
+%h1= t "users.new"
+=notice
+=simple_form_for @user do |f|
+  = f.input :name
+  = f.input :login
+  = f.input :email
+  = f.input :phone
+  = f.input :password
+  = f.input :password_confirmation
+  = f.association :role, :include_blank => false
+  = f.button :submit
+%div.actions
+  = link_back_to :admin

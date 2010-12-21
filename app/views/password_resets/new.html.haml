@@ -1,6 +1,7 @@
 %h1= t "reset_password.title_reset"
 = notice
 %div
-  = simple_form_for password_resets_path do |f|
-    = f.input :email
-    = f.button :submit
+  = form_tag password_resets_path do
+    %label= t "activerecord.attributes.user.email"
+    = text_field_tag :email
+    = submit_tag t "reset_password.submit_reset"

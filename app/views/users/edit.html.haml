@@ -1,0 +1,6 @@
+%h1= t("users.edit")
+= simple_form_for @user do |f|
+  = f.association :role, :include_blank => false
+  = f.button :submit
+%div.actions
+  = link_back_to :admin

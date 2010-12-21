@@ -52,6 +52,26 @@ ru:
               blank: "должен быть заполнен"
             email:
               blank: "должен быть заполнен"
+        user:
+          attributes:
+            name:
+              blank: "должно быть заполнено"
+            phone:
+              blank: "должен быть заполнен"
+            email:
+              blank: "должен быть заполнен"
+              too_short: "слишком короткий"
+            role:
+              blank: "должна быть выбрана"
+            login:
+              blank: "должен быть заполнен"
+              too_short: "слишком короткий"
+            password:
+              blank: "должен быть введен"
+              too_short: "слишком короткий"
+            password_confirmation:
+              blank: ""
+              too_short: "слишком короткий"
     models:
       order: "Заказ"
       orderline: "Пункт заказа"
@@ -121,6 +141,10 @@ ru:
         update: "Обновить"
       code:
         submit: "Просмотреть информацию"
+      password_resets_path:
+        submit: "Сбросить пароль!"
+      order:
+        submit: "Просмотреть информацию"
 
   simple_form:
       "yes": 'Да'
@@ -136,6 +160,7 @@ ru:
           manager: "Менеджер"
           paid: "Оплачен"
           description: "Описание"
+          code: "Код заказа"
         user_session:
           new:
             login: "Логин"
@@ -273,4 +298,8 @@ ru:
     orders: "Заказы"
 
 
+  roles:
+    client: "Клиент"
+    manager: "Менеджер"
+    admin: "Администратор"
 

@@ -41,7 +41,7 @@ class Order < ActiveRecord::Base
   end
 
   def update_state
-    completed_at =  done? ? Time.now : nil
+    save if (completed_at =  done? ? Time.now : nil)
   end
 
   protected

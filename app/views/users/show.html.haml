@@ -1,0 +1,18 @@
+%h1= t "users.show"
+%div.info.user_info
+  %div
+    %span.label= t "activerecord.attributes.user.name"
+    = @user.name
+  %div
+    %span.label= t "activerecord.attributes.user.login"
+    = @user.login
+  %div
+    %span.label= t "activerecord.attributes.user.email"
+    = link_to_email @user.email
+  %div
+    %span.label= t "activerecord.attributes.user.phone"
+    = @user.phone
+  %div
+    %span.label= t "activerecord.attributes.user.role"
+    = format_role @user.role
+= link_back_to :admin

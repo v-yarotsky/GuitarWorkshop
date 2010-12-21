@@ -2,9 +2,9 @@ GuitarWorkshop::Application.routes.draw do
 
   match "/login" => "UserSessions#new"
   match "/logout" => "UserSessions#destroy"
-
+  match "/show_order_info" => "Home#show_order_info"
   match "/admin" => "Admins#index"
-
+  match "/forgot_password" => "PasswordResets#new"
   resources :user_sessions
   resources :parts
   resources :services
@@ -54,9 +54,9 @@ GuitarWorkshop::Application.routes.draw do
   #   end
 
   # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
+  #   namespace :admins do
+  #     # Directs /admins/products/* to Admin::ProductsController
+  #     # (app/controllers/admins/products_controller.rb)
   #     resources :products
   #   end
 

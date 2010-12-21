@@ -1,0 +1,13 @@
+%h1= t "navigation.administration"
+%div.tbl
+  %table
+    %tr.header
+      %th= t "activerecord.attributes.user.login"
+      %th= t "activerecord.attributes.user.role"
+      %th
+    - @users.each do |user|
+      %tr
+        %td= user.login
+        %td= user.role.name
+        %td.actions= item_actions user
+= collection_actions :users

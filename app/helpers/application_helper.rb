@@ -47,8 +47,8 @@ module ApplicationHelper
     link_to t("common.go_back"), send(method_name.to_sym), :class => "action back with_text"
   end
 
-  def link_to_back
-
+  def link_to_history_back
+    link_to t("common.go_back"), :back, :class => "action back with_text"
   end
 
   def link_to_add(model)
